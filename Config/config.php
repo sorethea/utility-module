@@ -12,6 +12,9 @@ return [
         'Address'=>[
             'icon'=>'heroicon-o-at-symbol'
         ],
+        'Rating'=>[
+            'icon'=>'heroicon-o-star'
+        ],
     ],
     'navigation'=>[
         'name'=>'Utilities',
