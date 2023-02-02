@@ -39,7 +39,9 @@ class PhoneResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make("phone_number")->searchable(),
+                Tables\Columns\TextColumn::make("owner.name")->searchable(),
+                Tables\Columns\BooleanColumn::make("is_default")
             ])
             ->filters([
                 //
@@ -63,8 +65,8 @@ class PhoneResource extends Resource
     {
         return [
             'index' => Pages\ListPhones::route('/'),
-            'create' => Pages\CreatePhone::route('/create'),
-            'edit' => Pages\EditPhone::route('/{record}/edit'),
+            //'create' => Pages\CreatePhone::route('/create'),
+            //'edit' => Pages\EditPhone::route('/{record}/edit'),
         ];
     }
 }
