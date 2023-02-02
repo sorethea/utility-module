@@ -40,8 +40,9 @@ class PhoneResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make("phone_number")->searchable(),
-                Tables\Columns\TextColumn::make("owner.name")->searchable(),
-                Tables\Columns\BooleanColumn::make("is_default")
+                Tables\Columns\TextColumn::make("owner_id")->searchable(),
+                Tables\Columns\TextColumn::make("owner_type")->searchable(),
+                //Tables\Columns\BooleanColumn::make("is_default")
             ])
             ->filters([
                 //
