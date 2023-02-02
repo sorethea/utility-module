@@ -18,8 +18,8 @@ return new class extends Migration
             $table->integer('rating');
             $table->string('title')->nullable();
             $table->string('body')->nullable();
+            $table->morphs('rateable');
             $table->morphs('reviewer');
-            $table->morphs('author');
             $table->text('properties')->nullable();
             $table->string('criteria')->nullable();
             $table->enum('status', ['approved', 'disapproved', 'spam', 'pending'])->default('approved');

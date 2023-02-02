@@ -8,6 +8,7 @@ use Filament\PluginServiceProvider;
 use Modules\Utility\Filament\Resources\AddressResource;
 use Modules\Utility\Filament\Resources\CommentResource;
 use Modules\Utility\Filament\Resources\PhoneResource;
+use Modules\Utility\Filament\Resources\RatingResource;
 use Spatie\LaravelPackageTools\Package;
 use Modules\Utility\Filament\Pages\UtilityPage;
 
@@ -22,6 +23,7 @@ class FilamentServiceProvider extends PluginServiceProvider
         AddressResource::class,
         CommentResource::class,
         PhoneResource::class,
+        RatingResource::class,
     ];
     public function configurePackage(Package $package): void
     {
