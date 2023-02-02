@@ -1,6 +1,7 @@
 {
     "name": "sorethea/utility",
     "description": "",
+    "type": "laravel-module",
     "authors": [
         {
             "name": "Sorethea OK",
@@ -9,7 +10,9 @@
     ],
     "extra": {
         "laravel": {
-            "providers": [],
+            "providers": [
+                "Modules\\Utility\\Providers\\UtilityServiceProvider"
+            ],
             "aliases": {
 
             }

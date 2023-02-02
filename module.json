@@ -1,6 +1,7 @@
 {
     "name": "Utility",
     "alias": "utility",
+    "class": "module",
     "description": "",
     "keywords": [],
     "priority": 0,

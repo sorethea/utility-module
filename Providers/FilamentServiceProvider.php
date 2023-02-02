@@ -5,6 +5,7 @@ namespace Modules\Utility\Providers;
 use Filament\Facades\Filament;
 use Filament\Navigation\NavigationGroup;
 use Filament\PluginServiceProvider;
+use Modules\Utility\Filament\Resources\CommentResource;
 use Spatie\LaravelPackageTools\Package;
 use Modules\Utility\Filament\Pages\UtilityPage;
 
@@ -15,7 +16,9 @@ class FilamentServiceProvider extends PluginServiceProvider
         return $module->isEnabled();
     }
     protected array $pages = [];
-    protected array $resources =[];
+    protected array $resources =[
+        CommentResource::class,
+    ];
     public function configurePackage(Package $package): void
     {
         $package->name('utility');
