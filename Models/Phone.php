@@ -9,7 +9,11 @@ class Phone extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
+    protected $fillable = [
+        "phone_number",
+        "default",
+        "status",
+    ];
 
     protected static function newFactory()
     {
