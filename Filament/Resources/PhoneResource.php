@@ -17,7 +17,10 @@ class PhoneResource extends Resource
 {
     protected static ?string $model = Phone::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static function getNavigationIcon(): string
+    {
+        return config('utility.models.Phone.icon');
+    }
 
     protected static function getNavigationGroup(): ?string
     {
@@ -48,14 +51,14 @@ class PhoneResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -63,5 +66,5 @@ class PhoneResource extends Resource
             'create' => Pages\CreatePhone::route('/create'),
             'edit' => Pages\EditPhone::route('/{record}/edit'),
         ];
-    }    
+    }
 }

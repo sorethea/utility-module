@@ -21,7 +21,7 @@ class CommentResource extends Resource
 
     protected static function getNavigationIcon(): string
     {
-        return config('utility.models.comment.icon');
+        return config('utility.models.Comment.icon');
     }
 
     protected static function getNavigationGroup(): ?string

@@ -17,7 +17,10 @@ class AddressResource extends Resource
 {
     protected static ?string $model = Address::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static function getNavigationIcon(): string
+    {
+        return config('utility.models.Address.icon');
+    }
 
     protected static function getNavigationGroup(): ?string
     {
@@ -48,14 +51,14 @@ class AddressResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -63,5 +66,5 @@ class AddressResource extends Resource
             'create' => Pages\CreateAddress::route('/create'),
             'edit' => Pages\EditAddress::route('/{record}/edit'),
         ];
-    }    
+    }
 }
