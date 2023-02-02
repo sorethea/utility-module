@@ -17,7 +17,12 @@ class CommentResource extends Resource
 {
     protected static ?string $model = Comment::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    //protected static ?string $navigationIcon = 'heroicon-o-collection';
+
+    protected static function getNavigationIcon(): string
+    {
+        return config('utility.models.comment.icon');
+    }
 
     protected static function getNavigationGroup(): ?string
     {
@@ -48,14 +53,14 @@ class CommentResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -63,5 +68,5 @@ class CommentResource extends Resource
             'create' => Pages\CreateComment::route('/create'),
             'edit' => Pages\EditComment::route('/{record}/edit'),
         ];
-    }    
+    }
 }
