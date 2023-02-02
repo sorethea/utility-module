@@ -1,5 +1,9 @@
 <?php
 
 return [
-    'name' => 'Utility'
+    'name' => 'Utility',
+    'navigation'=>[
+        'name'=>'Utilities',
+        'enabled'=>true,
+    ],
 ];
