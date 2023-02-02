@@ -3,11 +3,12 @@
 namespace Modules\Utility\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Modules\Utility\Models\Address;
 
 trait HasAddress
 {
     public function addresses() :MorphMany{
-        return $this->morphMany(Phone::class,"owner");
+        return $this->morphMany(Address::class,"owner");
     }
 
     public function getAddressAttribute() :string {
