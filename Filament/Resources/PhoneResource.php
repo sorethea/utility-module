@@ -31,7 +31,7 @@ class PhoneResource extends Resource
     {
         return $form
             ->schema([
-                //
+
             ]);
     }
 

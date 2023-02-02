@@ -4,6 +4,7 @@ namespace Modules\Utility\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Phone extends Model
 {
@@ -14,6 +15,10 @@ class Phone extends Model
         "remark",
         "is_default",
     ];
+
+    public function owner(): MorphTo{
+        return $this->morphTo();
+    }
 
     protected static function newFactory()
     {
