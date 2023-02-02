@@ -12,7 +12,7 @@ trait HasPhone
     }
 
     public function getPhoneAttribute() :string {
-        $phone = $this->phones->where("default",true)->first();
+        $phone = $this->phones->where("is_default",true)->first();
         return $phone->phone_number??'';
     }
 

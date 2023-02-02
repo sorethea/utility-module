@@ -11,8 +11,8 @@ class Phone extends Model
 
     protected $fillable = [
         "phone_number",
-        "default",
-        "status",
+        "remark",
+        "is_default",
     ];
 
     protected static function newFactory()

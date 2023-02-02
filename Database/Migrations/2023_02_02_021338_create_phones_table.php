@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('phones', function (Blueprint $table) {
             $table->id();
             $table->string("phone_number");
+            $table->string("remark")->nullable();
+            $table->boolean("is_default")->default(false);
             $table->morphs("owner");
-            $table->string("status");
-            $table->boolean("default")->default(false);
             $table->timestamps();
         });
     }
