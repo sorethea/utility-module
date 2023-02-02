@@ -25,7 +25,7 @@ trait HasPhone
 
     public function getFillable(): array
     {
-        $fillable= parent::fillable();
+        $fillable= $this->fillable;
         $fillable[] = "phone";
         return $fillable;
     }
