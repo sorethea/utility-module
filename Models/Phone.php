@@ -10,9 +10,11 @@ class Phone extends Model
     use HasFactory;
 
     protected $fillable = [];
-    
+
     protected static function newFactory()
     {
         return \Modules\Utility\Database\factories\PhoneFactory::new();
     }
+
+
 }
