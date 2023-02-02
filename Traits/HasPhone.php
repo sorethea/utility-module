@@ -29,4 +29,5 @@ trait HasPhone
         $fillable[] = "phone";
         return $fillable;
     }
+
 }
