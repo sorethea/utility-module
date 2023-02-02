@@ -12,7 +12,7 @@ trait HasPhone
     }
 
     public function getPhoneAttribute() :string {
-        $phone = $this->morphOne(Phone::class,"owner")->ofMany("default",true);
+        $phone = $this->phones->where("default",true)->first();
         return $phone->phone_number??'';
     }
 
