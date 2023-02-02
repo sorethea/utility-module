@@ -39,7 +39,9 @@ class AddressResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make("address")->searchable(),
+                Tables\Columns\TextColumn::make("owner_id")->searchable(),
+                Tables\Columns\TextColumn::make("owner_type")->searchable(),
             ])
             ->filters([
                 //

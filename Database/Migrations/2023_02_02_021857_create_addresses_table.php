@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string("location")->nullable();
             $table->string("city")->nullable();
             $table->string("country")->nullable();
+            $table->boolean("is_default")->default(false);
             $table->text("properties")->nullable();
             $table->timestamps();
         });
