@@ -12,7 +12,7 @@ class Phone extends Model
 
     protected static function booted()
     {
-        static::created(function ($model){
+        static::saved(function ($model){
             if($model->is_default){
                 foreach ($model->owner->phones as $phone){
                     if($model->phone_number!=$phone->phone_number){
@@ -22,17 +22,18 @@ class Phone extends Model
                 }
             }
         });
-
-        static::updated(function ($model){
-            if($model->is_default){
-                foreach ($model->owner->phones as $phone){
-                    if($model->phone_number!=$phone->phone_number){
-                        $phone->is_default = false;
-                        $phone->save();
-                    }
-                }
-            }
-        });
+//        static::created();
+//
+//        static::updated(function ($model){
+//            if($model->is_default){
+//                foreach ($model->owner->phones as $phone){
+//                    if($model->phone_number!=$phone->phone_number){
+//                        $phone->is_default = false;
+//                        $phone->save();
+//                    }
+//                }
+//            }
+//        });
     }
 
     protected $fillable = [
