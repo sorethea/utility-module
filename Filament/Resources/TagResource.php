@@ -31,12 +31,14 @@ class TagResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make("name")
-                    ->unique("tags", "name", fn($record)=>$record)
-                    ->required(),
-                Forms\Components\TextInput::make("slug")->nullable(),
-                Forms\Components\TextInput::make("model"),
-                Forms\Components\Toggle::make('active')->default(true),
+                Forms\Components\Card::make([
+                    Forms\Components\TextInput::make("name")
+                        ->unique("tags", "name", fn($record)=>$record)
+                        ->required(),
+                    Forms\Components\TextInput::make("slug")->nullable(),
+                    Forms\Components\TextInput::make("model"),
+                    Forms\Components\Toggle::make('active')->default(true),
+                ])->columns(2)->columnSpan(2),
             ]);
     }
 
@@ -44,12 +46,10 @@ class TagResource extends Resource
     {
         return $table
             ->columns([
-                Forms\Components\Card::make([
-                    Tables\Columns\TextColumn::make("name")->searchable(),
-                    Tables\Columns\TextColumn::make("slug")->searchable(),
-                    Tables\Columns\TextColumn::make("model")->searchable(),
-                    Tables\Columns\ToggleColumn::make("active"),
-                ])->columns(2)->columnSpan(2),
+                Tables\Columns\TextColumn::make("name")->searchable(),
+                Tables\Columns\TextColumn::make("slug")->searchable(),
+                Tables\Columns\TextColumn::make("model")->searchable(),
+                Tables\Columns\ToggleColumn::make("active"),
             ])
             ->filters([
                 //
