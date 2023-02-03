@@ -23,9 +23,8 @@ return new class extends Migration
         });
 
         Schema::create('taggers', function (Blueprint $table) {
-            $table->integer('tag_id')->unsigned();
+            $table->foreignId('tag_id');
             $table->morphs('tagger');
-            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });
     }
 
