@@ -15,6 +15,12 @@ return [
         'Rating'=>[
             'icon'=>'heroicon-o-star'
         ],
+        'Price'=>[
+            'icon'=>'heroicon-o-currency-dollar'
+        ],
+        'Tag'=>[
+            'icon'=>'heroicon-o-tag'
+        ],
     ],
     'navigation'=>[
         'name'=>'Utilities',
