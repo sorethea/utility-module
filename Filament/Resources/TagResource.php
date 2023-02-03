@@ -47,7 +47,7 @@ class TagResource extends Resource
                 Tables\Columns\TextColumn::make("name")->searchable(),
                 Tables\Columns\TextColumn::make("slug")->searchable(),
                 Tables\Columns\TextColumn::make("model")->searchable(),
-                Forms\Components\Toggle::make("active"),
+                Tables\Columns\ToggleColumn::make("active"),
             ])
             ->filters([
                 //
