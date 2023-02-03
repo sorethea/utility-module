@@ -9,8 +9,13 @@ class Tag extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
-    
+    protected $fillable = [
+        "name",
+        "slug",
+        "model",
+        "active",
+    ];
+
     protected static function newFactory()
     {
         return \Modules\Utility\Database\factories\TagFactory::new();
