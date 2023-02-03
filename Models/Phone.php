@@ -20,11 +20,7 @@ class Phone extends Model
 //                        $phone->save();
 //                    }
 //                }
-                $model->owner->whereHas("phones",function ($query,$model){
-                    $query->where("id","!=",$model->id)->update([
-                        "is_default"=>false
-                    ]);
-                });
+                $model->owner->phones()->update(['is_default',false])->where('id','!=',$model->id);
             }
         });
     }
