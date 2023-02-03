@@ -7,6 +7,8 @@ use Filament\Navigation\NavigationGroup;
 use Filament\PluginServiceProvider;
 use Modules\Utility\Filament\Resources\AddressResource;
 use Modules\Utility\Filament\Resources\CommentResource;
+use Modules\Utility\Filament\Resources\CouponResource;
+use Modules\Utility\Filament\Resources\ExtraResource;
 use Modules\Utility\Filament\Resources\PhoneResource;
 use Modules\Utility\Filament\Resources\PriceResource;
 use Modules\Utility\Filament\Resources\RatingResource;
@@ -24,6 +26,8 @@ class FilamentServiceProvider extends PluginServiceProvider
     protected array $resources =[
         AddressResource::class,
         CommentResource::class,
+        CouponResource::class,
+        ExtraResource::class,
         PhoneResource::class,
         PriceResource::class,
         RatingResource::class,

@@ -6,6 +6,12 @@ return [
         'Comment'=>[
             'icon'=>'heroicon-o-chat'
         ],
+        'Coupon'=>[
+            'icon'=>'heroicon-o-gift'
+        ],
+        'Extra'=>[
+            'icon'=>'heroicon-o-view-grid-add'
+        ],
         'Phone'=>[
             'icon'=>'heroicon-o-phone'
         ],
