@@ -44,10 +44,12 @@ class TagResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make("name")->searchable(),
-                Tables\Columns\TextColumn::make("slug")->searchable(),
-                Tables\Columns\TextColumn::make("model")->searchable(),
-                Tables\Columns\ToggleColumn::make("active"),
+                Forms\Components\Card::make([
+                    Tables\Columns\TextColumn::make("name")->searchable(),
+                    Tables\Columns\TextColumn::make("slug")->searchable(),
+                    Tables\Columns\TextColumn::make("model")->searchable(),
+                    Tables\Columns\ToggleColumn::make("active"),
+                ])->columns(2)->columnSpan(2),
             ])
             ->filters([
                 //
