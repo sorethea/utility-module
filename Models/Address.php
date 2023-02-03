@@ -10,6 +10,18 @@ class Address extends Model
 {
     use HasFactory;
 
+    protected static function booted()
+    {
+        static::saved(function ($model){
+            if($model->is_default){
+                $model->owner->whereHas("addresses",function ($query,$model){
+                    $query->where("id","!=",$model->id)->update([
+                        "is_default"=>false
+                    ]);
+                });
+            }
+        });
+    }
     protected $fillable = [
         "address",
         "name",
@@ -19,6 +31,7 @@ class Address extends Model
         "location",
         "properties",
     ];
+
 
     protected $casts = [
         "properties"=>"array"

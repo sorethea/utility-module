@@ -1,0 +1,19 @@
+<?php
+
+namespace Modules\Utility\Traits;
+
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Modules\Utility\Models\Price;
+
+trait HasPrice
+{
+    public function prices() : MorphMany{
+        return $this->morMany(Price::class,"item");
+    }
+
+    public function getPriceAttribute() : float {
+        $price = $this->prices()->where("is_default",true)->first();
+        return $price->price??0;
+    }
+}

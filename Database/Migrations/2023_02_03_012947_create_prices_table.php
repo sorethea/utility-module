@@ -18,6 +18,7 @@ return new class extends Migration
             $table->morphs("item");
             $table->double("price")->default(0);
             $table->boolean("active")->default(true);
+            $table->boolean("is_default")->default(false);
             $table->timestamps();
         });
     }

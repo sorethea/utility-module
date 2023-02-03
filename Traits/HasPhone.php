@@ -16,18 +16,4 @@ trait HasPhone
         return $phone->phone_number??'';
     }
 
-//    public function getAppends(): array
-//    {
-//        $appends = parent::appends();
-//        $appends[] ="phone";
-//        return $appends;
-//    }
-//
-//    public function getFillable(): array
-//    {
-//        $fillable= $this->fillable;
-//        $fillable[] = "phone";
-//        return $fillable;
-//    }
-
 }

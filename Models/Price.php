@@ -5,10 +5,11 @@ namespace Modules\Utility\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\Utility\Traits\HasTag;
 
 class Price extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTag;
 
     protected $fillable = [
         'price',
@@ -18,9 +19,5 @@ class Price extends Model
     protected static function newFactory()
     {
         return \Modules\Utility\Database\factories\PriceFactory::new();
-    }
-
-    public function list(): BelongsTo{
-        return $this->belongsTo(PriceList::class);
     }
 }
