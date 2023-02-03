@@ -12,6 +12,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Modules\Utility\Models\Tag;
 
 class PriceResource extends Resource
 {
@@ -31,7 +32,11 @@ class PriceResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make("price")
+                    ->required(),
+                Forms\Components\Select::make("tag")
+                    ->options(fn()=>Tag::where("model","Price")->pluck("name","id"))
+                    ->required()
             ]);
     }
 
@@ -51,14 +56,14 @@ class PriceResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -66,5 +71,5 @@ class PriceResource extends Resource
             'create' => Pages\CreatePrice::route('/create'),
             'edit' => Pages\EditPrice::route('/{record}/edit'),
         ];
-    }    
+    }
 }
