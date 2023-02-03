@@ -8,5 +8,8 @@
     "providers": [
         "Modules\\Utility\\Providers\\UtilityServiceProvider"
     ],
-    "files": []
+    "files": [],
+    "require": [
+        "Core"
+    ]
 }
