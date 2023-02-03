@@ -14,12 +14,6 @@ class Phone extends Model
     {
         static::saved(function ($model){
             if($model->is_default){
-//                foreach ($model->owner->phones as $phone){
-//                    if($model->phone_number!=$phone->phone_number){
-//                        $phone->is_default = false;
-//                        $phone->save();
-//                    }
-//                }
                 $model->owner->phones()->where('id','!=',$model->id)->update(['is_default'=>false]);
             }
         });

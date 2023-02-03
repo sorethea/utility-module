@@ -11,11 +11,20 @@ class Price extends Model
 {
     use HasFactory, HasTag;
 
+    protected static function booted()
+    {
+        static::saved(function ($model){
+            if($model->is_default){
+                $model->item->prices()->where('id','!=',$model->id)->update(['is_default'=>false]);
+            }
+        });
+    }
+
     protected $fillable = [
         'price',
         'active',
+        'is_default',
     ];
-
     protected static function newFactory()
     {
         return \Modules\Utility\Database\factories\PriceFactory::new();

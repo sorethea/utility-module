@@ -14,11 +14,7 @@ class Address extends Model
     {
         static::saved(function ($model){
             if($model->is_default){
-                $model->owner->whereHas("addresses",function ($query,$model){
-                    $query->where("id","!=",$model->id)->update([
-                        "is_default"=>false
-                    ]);
-                });
+                $model->owner->addresses()->where("id","!=",$model->id)->update("is_default",false);
             }
         });
     }
