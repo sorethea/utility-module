@@ -4,8 +4,9 @@ namespace Modules\Utility\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Core\Models\Module;
 
-class UtilityDatabaseSeeder extends Seeder
+class ModuleTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,6 +17,8 @@ class UtilityDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call("ModuleTableSeeder");
+        $module = Module::firstOrCreate(["name" => "Utility"]);
+        $module->installed = true;
+        $module->save();
     }
 }
