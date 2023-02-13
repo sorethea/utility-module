@@ -16,6 +16,6 @@ class UtilityDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call("ModuleTableSeeder");
+        $this->call(ModuleTableSeeder::class);
     }
 }
