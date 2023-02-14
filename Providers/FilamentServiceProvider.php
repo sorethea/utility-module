@@ -26,8 +26,6 @@ class FilamentServiceProvider extends PluginServiceProvider
     protected array $resources =[
         AddressResource::class,
         CommentResource::class,
-        CouponResource::class,
-        ExtraResource::class,
         PhoneResource::class,
         PriceResource::class,
         RatingResource::class,

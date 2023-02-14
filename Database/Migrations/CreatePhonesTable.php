@@ -1,10 +1,10 @@
 <?php
-
+namespace Modules\Utility\Database\Migrations;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-return new class extends Migration
+class CreatePhonesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('extras', function (Blueprint $table) {
+        Schema::create('phones', function (Blueprint $table) {
             $table->id();
-
+            $table->string("phone_number");
+            $table->string("remark")->nullable();
+            $table->boolean("is_default")->default(false);
+            $table->morphs("owner");
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('extras');
+        Schema::dropIfExists('phones');
     }
 };

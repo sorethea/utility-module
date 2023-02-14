@@ -20,7 +20,5 @@ class ModuleTableSeeder extends Seeder
         $module = Module::firstOrCreate(["name" => "Utility"]);
         $module->installed = true;
         $module->save();
-
-
     }
 }
