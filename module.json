@@ -9,7 +9,7 @@
         "Modules\\Utility\\Providers\\UtilityServiceProvider"
     ],
     "files": [],
-    "requires": [
-        "Core"
+    "requirements": [
+        "Core Module"
     ]
 }
