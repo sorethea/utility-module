@@ -1,10 +1,10 @@
 <?php
-namespace Modules\Utility\Database\Migrations;
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRatingsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.

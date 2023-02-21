@@ -1,10 +1,10 @@
 <?php
-namespace Modules\Utility\Database\Migrations;
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePricesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,16 @@ class CreatePricesTable extends Migration
      */
     public function up()
     {
-        Schema::create('prices', function (Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->morphs("item");
-            $table->double("price")->default(0);
-            $table->boolean("active")->default(true);
+            $table->morphs("owner");
+            $table->string("name")->nullable();
+            $table->string("address");
+            $table->string("location")->nullable();
+            $table->string("city")->nullable();
+            $table->string("country")->nullable();
             $table->boolean("is_default")->default(false);
+            $table->text("properties")->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +34,6 @@ class CreatePricesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prices');
+        Schema::dropIfExists('addresses');
     }
 };
