@@ -19,7 +19,7 @@ class UtilityDatabaseSeeder extends Seeder
         $this->call(ModuleTableSeeder::class);
     }
 
-    public function rollbakc()
+    public function rollback()
     {
 
     }
