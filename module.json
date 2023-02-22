@@ -1,7 +1,7 @@
 {
     "name": "Utility",
     "alias": "utility",
-    "class": "module",
+    "type": "module",
     "description": "",
     "keywords": [],
     "priority": 0,
@@ -10,6 +10,6 @@
     ],
     "files": [],
     "requirements": [
-        "Core"
+        "lam"
     ]
 }
