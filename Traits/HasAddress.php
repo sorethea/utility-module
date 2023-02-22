@@ -3,7 +3,7 @@
 namespace Modules\Utility\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Modules\Utility\Models\Address;
+use Modules\LAM\Models\Address;
 
 trait HasAddress
 {

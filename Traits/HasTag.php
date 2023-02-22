@@ -2,9 +2,8 @@
 
 namespace Modules\Utility\Traits;
 
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Modules\Utility\Models\Tag;
+use Modules\LAM\Models\Tag;
 
 trait HasTag
 {

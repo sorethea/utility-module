@@ -3,7 +3,7 @@
 namespace Modules\Utility\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Modules\Utility\Models\Visit;
+use Modules\LAM\Models\Visit;
 
 trait HasVisit
 {

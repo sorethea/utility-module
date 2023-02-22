@@ -2,9 +2,8 @@
 
 namespace Modules\Utility\Traits;
 
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Modules\Utility\Models\Price;
+use Modules\LAM\Models\Price;
 
 trait HasPrice
 {
